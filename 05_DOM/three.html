@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: aliceblue;"> 
+    
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+   function addLanguage (langName) {
+        const li = document.createElement('Li');
+        li.innerHTML = `${langName}`  //whole element is parsed and renendered which is not efficient
+
+        document.querySelector('.language').appendChild(li)
+   }
+
+   addLanguage("Python")
+
+   function addlanguageOptimised (langname)
+   {
+    const li = document.createElement("li");
+    li.appendChild(document.createTextNode(langname)) //changes the target node and makes changes to the DOM
+    document.querySelector('.language').appendChild(li)
+
+   }
+
+   addlanguageOptimised("React")
+</script>
+
+
+</html>
