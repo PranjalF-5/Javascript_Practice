@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    //Never inject an onclick event directly in a html code. It is not scalable. But you can inject it in react as it can be scaled
+    // document.getElementById(owl).onclick = function(){  this method is goot but it has limited features and you need to use event listeners for better options
+    //     alert("owl")
+    // }
+
+    document.getElementById('photoshop').addEventListener('click', (e) => {
+       
+        e // it is a pointer event
+        //Event propagation is the third arguement of thr eventListener (true/false)
+        // Event propagation can happen in two main phases: Event Capturing (true, root to element propagation)and Event Bubbling(false,element to root propagation) 
+
+        // the default propagation can be stopped by e.stopPropagation()
+        
+    }, false)  //byfefault the third parameter is false which is not necessary to write but in some programs it dosent run without mentioning it
+
+    //focus on type, timestamp , defaultPrevented, 
+    // target , toElement , srcElement, currentTarget
+    //clientX, clientY, ooset, screeX, screenY
+    // altkay , ctrlkey shiftkey, keycode
+</script>
+</html>
