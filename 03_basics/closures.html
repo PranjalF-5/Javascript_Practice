@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+//******************lexical scoping*******************
+    function init(){
+
+        let name = 'Batman';
+        function display(){
+            console.log(name);  //whenever there is a function decleared inside another function then all the variables of the outer function can be accessed by the inner function. This is called lexical scoping.
+
+            // The vice versa in not true 
+        }
+
+        display();
+    }
+
+    init();
+
+
+//*********************closure*************************
+
+
+function makeFunc() {
+    const name = "Batman";
+    function display(){
+        console.log(name);
+    }
+
+    return display() //Here the inner funcgtion is returned but when the makeFunction is called the whole lexical scope is returned instead of just display name i.e not just the executinal context
+}
+
+const myFunc = makeFunc();
+myFunc();
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
